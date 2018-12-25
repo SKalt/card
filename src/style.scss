@@ -1,50 +1,73 @@
+// @mixin parallax($name: "parallax", $number_of_layers: 3, $start_layer: 0, $space: -100) {
+//   @for $i from $start_layer through $number_of_layers {
+//     $x: ($parallax__layers - $i) / 2;
+//     .#{$name}_layer_#{$i}{
+//      transform: translateZ(#{-100 * $x}px) scale(#{$x + 1});
+//     }
+//   }
+// }
+
 img {
   position: absolute;
   margin: 0;
   padding: 0;
   overflow: visible;
+  width: 100%;
+}
+main {
+  width: 100%;
+  overflow-x: hidden;
 }
 #bg-main {
-  width: 101vw;
+  // width: 101vw;
+  height: 500vh;
 }
-#c-3 {
-  left: 30px;
-  width: 100%;
+#c3 {
+  left: -50%;
+  top: 10px;
+  width: 300%;
+}
+#c2 {
+  left: 50%;
+  top: 10px;
+  width: 200%;
+}
+#c1 {
+ transform: translateZ(#{-100 * 3}px) scale(#{3 + 1});
+}
+
+#h2 {
+  top:360vh;
+}
+#h3 {
+  top: 300vh;
+  width: 125%;
 }
 .parallax {
   perspective: 100px;
-  //   overflow-x: hidden;
-  //   overflow-y: auto;
-
+  height: 100vh;
+  // overflow-x: hidden;
+  // overflow-y: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  // margin-left: -1500px;
 }
-
 //
-// .parallax {
-//   perspective: 100px;
-//   height: 100vh;
-//   overflow-x: hidden;
-//   overflow-y: auto;
-//   position: absolute;
-//   top: 0;
-//   left: 50%;
-//   right: 0;
-//   bottom: 0;
-//   margin-left: -1500px;
-// }
-//
-// .parallax__layer{
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//
-//   img {
-//     display: block;
-//     position: absolute;
-//     bottom: 0;
-//   }
-// }
+.parallax__layer{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  img {
+    display: block;
+    position: absolute;
+    bottom: 0;
+  }
+}
 //
 // .parallax__cover{
 // background: #2D112B;
@@ -56,10 +79,11 @@ img {
 // height: 2000px;
 // z-index: 2;
 // }
+$parallax__layers: 6;
 
-// /* @for $i from 0 through $parallax__layers {
-// $x: ($parallax__layers - $i) / 2;
-// .parallax__layer__#{$i}{
-//  transform: translateZ(-100 * $x#{px}) scale($x + 1);
-// }
-// } */
+@for $i from 0 through $parallax__layers {
+  $x: ($parallax__layers - $i) / 2;
+  .parallax__layer__#{$i}{
+   transform: translateZ(#{-100 * $x}px) scale(#{$x + 1});
+  }
+}

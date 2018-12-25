@@ -15,12 +15,11 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg7004"
-   inkscape:version="0.92.3 (5aff6ba, 2018-11-25)"
-   sodipodi:docname="background-1.svg">
+   preserveAspectRatio="xMidYMax slice"
+   >
   <defs
      id="defs6998">
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient4865"
        id="linearGradient4867"
        x1="558.14215"
@@ -30,7 +29,6 @@
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.26458333,0,0,0.3858751,0.75652238,46.917426)" />
     <linearGradient
-       inkscape:collect="always"
        id="linearGradient4865">
       <stop
          style="stop-color:#000000;stop-opacity:1;"
@@ -42,7 +40,6 @@
          id="stop4863" />
     </linearGradient>
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient4841"
        id="linearGradient4843"
        x1="548"
@@ -52,7 +49,6 @@
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.25937672,0,0,2.2146583,0.73244238,-660.61491)" />
     <linearGradient
-       inkscape:collect="always"
        id="linearGradient4841">
       <stop
          style="stop-color:#9c3778;stop-opacity:0.627451"
@@ -64,40 +60,7 @@
          id="stop4839" />
     </linearGradient>
   </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="497.14286"
-     inkscape:cy="445.71429"
-     inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="1853"
-     inkscape:window-height="1025"
-     inkscape:window-x="67"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1" />
-  <metadata
-     id="metadata7001">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
+  <g id="layer1">
     <rect
        style="display:inline;opacity:1;fill:url(#linearGradient4867);fill-opacity:1;stroke:#000080;stroke-width:0.50276393;stroke-opacity:1"
        id="rect4809"
