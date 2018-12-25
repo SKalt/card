@@ -10,16 +10,17 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="316.5680046081543"
-   height="180.99468994140625"
-   viewbox="-30.6578965187072754 208.39717102050781 316.2800598144531 180.7539520263672"
+   width="306.5680046081543"
+   height="106.7539520263672"
+   viewbox="-30.6578965187072754 208.39717102050781 306.2800598144531 106.7539520263672"
    version="1.1"
    id="svg2639"
    overflow="visible"
    >
   <defs id="defs2633" />
   <g
-     id="layer1">
+     id="layer1" transform="translate(0 -210)">
+     <!-- <circle cx="170" cy="208" r="10" /> -->
     <path
        style="display:inline;opacity:1;fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 230.14999,236.19095 2.24896,22.75416"
