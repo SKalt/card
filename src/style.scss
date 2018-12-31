@@ -1,11 +1,19 @@
-// @mixin parallax($name: "parallax", $number_of_layers: 3, $start_layer: 0, $space: -100) {
-//   @for $i from $start_layer through $number_of_layers {
-//     $x: ($parallax__layers - $i) / 2;
-//     .#{$name}_layer_#{$i}{
-//      transform: translateZ(#{-100 * $x}px) scale(#{$x + 1});
-//     }
-//   }
-// }
+/* defs and mixins */
+@mixin parallax($name: "parallax", $number_of_layers: 3, $start_layer: 0, $space: -100) {
+  @for $i from $start_layer through $number_of_layers {
+    $x: ($parallax__layers - $i) / 2;
+    .#{$name}_layer_#{$i}{
+     transform: translateZ(#{-100 * $x}px) scale(#{$x + 1});
+    }
+  }
+}
+
+/* general scaffolding / element styling */
+svg path {
+  fill-opacity: 1;
+  stroke-opacity: 1;
+  opacity: 1;
+}
 
 img {
   position: absolute;
@@ -14,38 +22,29 @@ img {
   overflow: visible;
   width: 100%;
 }
+
 main {
   width: 100%;
   overflow-x: hidden;
-}
-#bg-main {
-  // width: 101vw;
-  height: 500vh;
-}
-#c3 {
-  left: -50%;
-  top: 10px;
-  width: 300%;
-}
-#c2 {
-  left: 50%;
-  top: 10px;
-  width: 200%;
-}
-#c1 {
- transform: translateZ(#{-100 * 3}px) scale(#{3 + 1});
+  background-color: black;
 }
 
-#h2 {
-  top:360vh;
+/* classes */
+img.snow {
+  position: relative;
 }
-#h3 {
-  top: 300vh;
-  width: 125%;
-}
+
+// .sheet {
+//   width: 100%;
+//   height: 410vh;
+//   background-image: url('./img/snow.svg');
+//   background-repeat: repeat;
+// }
+
+
 .parallax {
   perspective: 100px;
-  height: 100vh;
+  height: 400vh;
   // overflow-x: hidden;
   // overflow-y: auto;
   position: absolute;
@@ -68,6 +67,78 @@ main {
     bottom: 0;
   }
 }
+
+$parallax__layers: 6;
+
+@for $i from 0 through $parallax__layers {
+  $color: rgb(255/2, 255/2, 255/($parallax__layers - $i));
+  .fill_#{$i} { fill: $color; }
+  .stroke_#{$i} { stroke: $color; }
+  .color_#{$i} {color: $color; }
+
+  $x: ($parallax__layers - $i) / 2;
+  .parallax__layer__#{$i}{
+    transform: translateZ(#{-100 * $x}px) scale(#{$x + 1});
+  }
+}
+
+
+/* id'd stuff */
+#main {
+  // height: 430vh;
+  // max-height:
+
+}
+#bg-main {
+  // width: 101vw;
+  height: 500vh;
+}
+#c3 {
+  left: -50%;
+  top: 10px;
+  width: 300%;
+}
+#c2 {
+  left: 50%;
+  top: 10px;
+  width: 200%;
+}
+// #c1 {
+//  transform: translateZ(#{-100 * 3}px) scale(#{3 + 1});
+// }
+
+#h1 {
+  top: 450vh;
+  width: 150%;
+}
+#h2 {
+  top:405vh;
+}
+#h3 {
+  top: 100%;
+  width: 125%;
+  overflow: hidden;
+}
+
+#s1 {
+  top: 10vh;
+  overflow: hidden;
+}
+
+#s2 {
+  top: 100vh;
+}
+
+#s3 {
+  top: 100vh;
+}
+#footer_cover {
+  z-index: 100;
+  color: white;
+  bottom: 0;
+  top: 90%;
+  position: absolute;
+}
 //
 // .parallax__cover{
 // background: #2D112B;
@@ -79,11 +150,3 @@ main {
 // height: 2000px;
 // z-index: 2;
 // }
-$parallax__layers: 6;
-
-@for $i from 0 through $parallax__layers {
-  $x: ($parallax__layers - $i) / 2;
-  .parallax__layer__#{$i}{
-   transform: translateZ(#{-100 * $x}px) scale(#{$x + 1});
-  }
-}

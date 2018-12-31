@@ -1,0 +1,17 @@
+{
+  "name": "happy-holidays.now.sh",
+  "version": "0.0.1",
+  "description": "a holiday card",
+  "main": "src/index.html",
+  "repository": "https://github.com/SKalt/card.git",
+  "author": "Steven Kalt <kalt.steven@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "deploy": ""
+  },
+  "devDependencies": {
+    "parcel": "^1.11.0",
+    "sass": "^1.15.2"
+  }
+}
