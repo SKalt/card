@@ -113,37 +113,7 @@ $parallax__layers: 6;
   @extend .stroke_12;
 }
 
-#h2__frame {
-  & .darker {
-    @extend .fill_3;
-    @extend .stroke_3;
-    &.darkest_wndw {
-      @extend .fill_1;
-    }
-  }
-  & * {
-    @extend .fill_6;
-    @extend .stroke_6;
-  }
-  & .snow {
-    @extend .fill_8;
-    @extend .stroke_8;
-  }
-
-}
-
-
-#wndw_1, #wndw_2 {
-  @extend .fill_12;
-}
-
-
-#main {
-  height: 430vh;
-  // max-height:
-
-}
-#h1__inner {
+#h1__frame {
   & * {
     @extend .fill_2;
     @extend .stroke_2;
@@ -157,4 +127,58 @@ $parallax__layers: 6;
     @extend .fill_1;
     @extend .stroke_1;
   }
+}
+#h2__frame {
+  & .darker {
+    fill: none;
+    stroke-width: 0.26458332px;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    // stroke-fill: #000000;
+    @extend .fill_3;
+    @extend .stroke_3;
+    &.darker_smaller {
+      stroke-width: 0.13229166
+    }
+    &.darkest_wndw {
+      @extend .fill_1;
+    }
+  }
+  & * {
+    @extend .fill_6;
+    @extend .stroke_6;
+  }
+  & .snow {
+    @extend .fill_8;
+    @extend .stroke_8;
+  }
+}
+#h3__frame {
+  & * {
+    @extend .fill_8;
+    @extend .stroke_8;
+  }
+  & .darker {
+    @extend .fill_7;
+    @extend .stroke_7;
+  }
+  & .fence_main {@extend .fill_6;}
+  & .fence_post {@extend .fill_4;}
+  & .fence_upper {@extend .fill_5;}
+
+  & .snow {
+    @extend .fill_9;
+    @extend .stroke_9;
+  }
+}
+
+#wndw_1, #wndw_2 {
+  @extend .fill_12;
+}
+
+
+#main {
+  height: 430vh;
+  // max-height:
+
 }
