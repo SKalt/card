@@ -25,7 +25,7 @@ img {
 
 main {
   width: 100%;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   background-color: black;
 }
 
@@ -61,9 +61,9 @@ img.snow {
   right: 0;
   bottom: 0;
   left: 0;
-  img {
+  svg {
     display: block;
-    position: absolute;
+    position: relative;
     bottom: 0;
   }
 }
@@ -71,82 +71,90 @@ img.snow {
 $parallax__layers: 6;
 
 @for $i from 0 through $parallax__layers {
-  $color: rgb(255/2, 255/2, 255/($parallax__layers - $i));
-  .fill_#{$i} { fill: $color; }
-  .stroke_#{$i} { stroke: $color; }
-  .color_#{$i} {color: $color; }
-
   $x: ($parallax__layers - $i) / 2;
   .parallax__layer__#{$i}{
     transform: translateZ(#{-100 * $x}px) scale(#{$x + 1});
   }
 }
 
+@for $i from 0 through 12 {
+  $color: hsl(227, 55%, 10 * $i);
+  .fill_#{$i} { fill: $color; }
+  // #c#{$i}__frame * {
+  //   @extend .fill_#{$i}
+  // }
+  .stroke_#{$i} { stroke: $color; }
+  .color_#{$i} {color: $color; }
+}
 
 /* id'd stuff */
+// #clouds, #houses {
+//   @extend .parallax__layer;
+// }
+
+#c1__frame {
+  @extend .fill_1;
+  @extend .stroke_1;
+}
+#c2__frame {
+  @extend .fill_3;
+  @extend .stroke_3;
+}
+#c3__frame {
+  @extend .fill_6;
+  @extend .stroke_6;
+}
+#c4__frame {
+  @extend .fill_8;
+  @extend .stroke_8;
+}
+#c5__frame {
+  @extend .fill_12;
+  @extend .stroke_12;
+}
+
+#h2__frame {
+  & .darker {
+    @extend .fill_3;
+    @extend .stroke_3;
+    &.darkest_wndw {
+      @extend .fill_1;
+    }
+  }
+  & * {
+    @extend .fill_6;
+    @extend .stroke_6;
+  }
+  & .snow {
+    @extend .fill_8;
+    @extend .stroke_8;
+  }
+
+}
+
+
+#wndw_1, #wndw_2 {
+  @extend .fill_12;
+}
+
+
 #main {
-  // height: 430vh;
+  height: 430vh;
   // max-height:
 
 }
-#bg-main {
-  // width: 101vw;
-  height: 500vh;
-}
-#c3 {
-  left: -50%;
-  top: 10px;
-  width: 300%;
-}
-#c2 {
-  left: 50%;
-  top: 10px;
-  width: 200%;
-}
-// #c1 {
-//  transform: translateZ(#{-100 * 3}px) scale(#{3 + 1});
-// }
+#h1__inner {
+  & * {
+    @extend .fill_2;
+    @extend .stroke_2;
+  }
+  & .snow {
+    @extend .fill_3;
+    @extend .stroke_3;
 
-#h1 {
-  top: 450vh;
-  width: 150%;
+  }
+  & .darker {
+    @extend .fill_1;
+    @extend .stroke_1;
+  }
 }
-#h2 {
-  top:405vh;
-}
-#h3 {
-  top: 100%;
-  width: 125%;
-  overflow: hidden;
-}
-
-#s1 {
-  top: 10vh;
-  overflow: hidden;
-}
-
-#s2 {
-  top: 100vh;
-}
-
-#s3 {
-  top: 100vh;
-}
-#footer_cover {
-  z-index: 100;
-  color: white;
-  bottom: 0;
-  top: 90%;
-  position: absolute;
-}
-//
-// .parallax__cover{
-// background: #2D112B;
-// display: block;
-// position: absolute;
-// top: 100%;
-// left: 0;
-// right: 0;
-// height: 2000px;
-// z-index: 2;
-// }
