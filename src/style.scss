@@ -23,11 +23,10 @@ img {
   width: 100%;
 }
 
-main {
-  width: 100%;
-  // overflow-x: hidden;
-  background-color: black;
-}
+// body>div:first-child {
+//   // overflow-x: hidden;
+//
+// }
 
 /* classes */
 img.snow {
@@ -43,17 +42,19 @@ img.snow {
 
 
 .parallax {
-  perspective: 100px;
-  height: 400vh;
-  // overflow-x: hidden;
-  // overflow-y: auto;
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: black;
   // margin-left: -1500px;
 }
+// TODO: media query for phones
 //
 .parallax__layer{
   position: absolute;
@@ -73,7 +74,7 @@ $parallax__layers: 6;
 @for $i from 0 through $parallax__layers {
   $x: ($parallax__layers - $i) / 2;
   .parallax__layer__#{$i}{
-    transform: translateZ(#{-100 * $x}px) scale(#{$x + 1});
+    transform: translateZ(#{-1 * $x}px) scale(4);
   }
 }
 
@@ -174,11 +175,4 @@ $parallax__layers: 6;
 
 #wndw_1, #wndw_2 {
   @extend .fill_12;
-}
-
-
-#main {
-  height: 430vh;
-  // max-height:
-
 }
