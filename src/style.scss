@@ -1,14 +1,6 @@
-/* defs and mixins */
-// @mixin parallax_system($name: "parallax", $number_of_layers: 3, $start_layer: 0, $space: -100) {
-//   @for $i from $start_layer through $number_of_layers {
-//     $x: ($parallax__layers - $i) / 2;
-//     .#{$name}__layer__#{$i}{
-//      transform: translateZ(#{$space * $x}px) scale(#{$x + 1});
-//     }
-//   }
-// }
 
-/* general scaffolding / element styling */
+
+
 svg path {
   fill-opacity: 1;
   stroke-opacity: 1;
@@ -22,24 +14,10 @@ img {
   overflow: visible;
   width: 100%;
 }
-
-// body>div:first-child {
-//   // overflow-x: hidden;
-//
-// }
-
 /* classes */
 img.snow {
   position: relative;
 }
-
-// .sheet {
-//   width: 100%;
-//   height: 410vh;
-//   background-image: url('./img/snow.svg');
-//   background-repeat: repeat;
-// }
-
 
 .parallax {
   perspective: 1px;
@@ -52,14 +30,8 @@ img.snow {
   right: 0;
   bottom: 0;
   background-color: black;
-  // margin-left: -1500px;
 }
-// TODO: media query for phones
-@media only screen and (max-width : 768px) {
-  .parallax {
-    margin-left: -200px
-  }
-}
+
 
 .parallax__layer{
   position: absolute;
@@ -80,9 +52,6 @@ $parallax__layers: 6;
   $x: ($parallax__layers - $i) / 2;
   .parallax__layer__#{$i}{
     transform: translateZ(#{-1 * $x}px);
-    // & svg, & svg g {
-    //    transform: scale(4)
-    // }
   }
 }
 
@@ -99,14 +68,9 @@ $parallax__layers: 6;
 @for $i from 1 through 3 {
   .house__layer__#{$i} {
     top: 150vh;
-    transform: translateZ(#{$i/2}px); // scale(1 + (3 * $i) / 2)
+    transform: translateZ(#{-$i/8}px); // scale(1 + (3 * $i) / 2)
   }
 }
-
-/* id'd stuff */
-// #clouds, #houses {
-//   @extend .parallax__layer;
-// }
 
 #c1__frame {
   @extend .fill_1;
@@ -114,7 +78,7 @@ $parallax__layers: 6;
 }
 #c2__frame {
   @extend .fill_3;
-  @extend .stroke_3;
+  // @extend .stroke_3;
 }
 #c3__frame {
   @extend .fill_6;
@@ -129,23 +93,10 @@ $parallax__layers: 6;
   @extend .stroke_12;
 }
 
-#h1__frame {
-  top: 200vh;
-  & * {
-    @extend .fill_2;
-    @extend .stroke_2;
-  }
-  & .snow {
-    @extend .fill_3;
-    @extend .stroke_3;
-
-  }
-  & .darker {
-    @extend .fill_1;
-    @extend .stroke_1;
-  }
+#h2__inner {
 }
 #h2__frame {
+  top: 111vh;
   & .darker {
     stroke-width: 0.26458332px;
     stroke-linecap: butt;
@@ -168,26 +119,4 @@ $parallax__layers: 6;
     @extend .fill_8;
     @extend .stroke_8;
   }
-}
-#h3__frame {
-  & * {
-    @extend .fill_8;
-    @extend .stroke_8;
-  }
-  & .darker {
-    @extend .fill_7;
-    @extend .stroke_7;
-  }
-  & .fence_main {@extend .fill_6;}
-  & .fence_post {@extend .fill_4;}
-  & .fence_upper {@extend .fill_5;}
-
-  & .snow {
-    @extend .fill_9;
-    @extend .stroke_9;
-  }
-}
-
-#wndw_1, #wndw_2 {
-  @extend .fill_12;
 }
