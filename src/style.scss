@@ -74,7 +74,7 @@ $parallax__layers: 6;
 
 #c1__frame {
   @extend .fill_1;
-  @extend .stroke_1;
+  // @extend .stroke_1;
 }
 #c2__frame {
   @extend .fill_3;
