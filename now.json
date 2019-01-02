@@ -1,4 +1,7 @@
 {
-  "version": 1,
-  "alias": "happy-holidays"
+  "version": 2,
+  "alias": "happy-holidays",
+  "builds": [
+    {"src": "./dist", "use": "@now/static"}
+  ]
 }
