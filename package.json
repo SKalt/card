@@ -12,7 +12,7 @@
     "build": "parcel build ./src/index.html --detailed-report",
     "start": "parcel ./src/index.html",
     "test": "cat ./dist/index.html | grep '\"snow_1'; echo $?",
-    "deploy": "yarn run build && cp now.json ./dist && now ./dist"
+    "deploy": "yarn run build && now ./dist"
   },
   "devDependencies": {
     "global": "^4.3.2",

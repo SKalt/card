@@ -14,7 +14,6 @@ function snow(id, {n, r=10, w, h, minY=0, minX=0}) { // must be 1:1 for px
     .join('\n')
 }
 
-window.onload = function(){
   [
     {n: 3000, r:.35, w: 500, h: 300, minX: -100},
     {n: 3000, r:.35, w: 300, h: 300},
@@ -28,4 +27,3 @@ window.onload = function(){
     const path = `${location.origin}?${compress(msg.innerText)}`
     history.pushState({path}, '', path)
   })
-}
