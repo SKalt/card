@@ -128,4 +128,17 @@ $parallax__layers: 6;
   position: absolute;
   color: white;
   font-family: helvectica arial;
+  width: 100%;
+  padding-bottom: 10vh;
+}
+#msg{
+  color: #ccc;
+  &:empty {
+    content: "your message here";
+    min-height: 100px;
+    min-width: 100px;
+  }
+  &:focus {
+    color: red
+  }
 }

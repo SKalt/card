@@ -8,10 +8,17 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "deploy": ""
+    "build": "parcel build ./src/index.html --detailed-report",
+    "start": "parcel ./src/index.html",
+    "test": "cat ./dist/index.html | grep '\"snow_1'; echo $?"
   },
   "devDependencies": {
+    "global": "^4.3.2",
     "parcel": "^1.11.0",
-    "sass": "^1.15.2"
+    "sass": "^1.15.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "lz-string": "^1.4.4"
   }
 }
