@@ -2,6 +2,7 @@
   "version": 2,
   "alias": "happy-holidays",
   "builds": [
-    {"src": "./dist", "use": "@now/static"}
+    { "src": "./dist", "use": "@now/static" },
+    { "src": "./2019", "use": "@now/static" }
   ]
 }

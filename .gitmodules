@@ -1,0 +1,4 @@
+[submodule "2019"]
+	path = 2019
+	url = https://github.com/SKalt/card-2019.git
+	branch = dist
