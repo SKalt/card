@@ -1,8 +1,6 @@
 {
-  "version": 2,
-  "alias": "happy-holidays",
-  "builds": [
-    { "src": "./dist", "use": "@now/static" },
-    { "src": "./2019", "use": "@now/static" }
-  ]
+  "name": "happy-holidays",
+  "alias": "happy-holidays.now.sh",
+  "files": ["./2018", "./2019"],
+  "routes": [{ "src": "/", "status": 308, "headers": { "Location": "/2018/" } }]
 }

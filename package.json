@@ -8,16 +8,19 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "prebuild": "rm -rf ./dist",
-    "build": "parcel build ./src/index.html --detailed-report",
+    "prebuild": "rm -rf ./2018/*",
+    "build": "parcel build --public-url '/2018' ./src/index.html -d 2018 --detailed-report",
     "start": "parcel ./src/index.html",
-    "test": "cat ./dist/index.html | grep '\"snow_1'; echo $?",
-    "deploy": "yarn run build && now ./dist"
+    "test": "cat ./2018/index.html | grep -q '\"snow_1'",
+    "deploy": "git submodule update --recursive --remote && yarn build && yarn test && now"
   },
   "devDependencies": {
+    "@vue/cli-plugin-pwa": "^3.3.0",
     "global": "^4.3.2",
+    "now": "^16.6.0",
     "parcel": "^1.11.0",
     "sass": "^1.15.2",
+    "serve": "^11.2.0",
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
