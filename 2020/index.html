@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<head>
+  <title>Happy holidays!</title>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
+  <style>
+    body {
+      color: black;
+      background-color: white;
+      font-family: "Courier New", Courier, monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        color: white;
+        background-color: black;
+      }
+      a:link {
+        color: #308cdc;
+      }
+      a:visited {
+        color: #ab4be0;
+      }
+    }
+    main {
+      max-width: 70ch;
+      padding: 2ch;
+      margin: auto;
+    }
+    div.container {
+      display: flex;
+      max-width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    img {
+      margin: 0.5ch;
+      display: inline;
+      max-width: 45%;
+    }
+    summary:hover {
+      text-decoration: underline;
+    }
+    #msg:empty {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Happy holidays from Baltimore, MD!</h1>
+    <div id="msg" contenteditable=""></div>
+    <div class="card">
+      <p>
+        My life changed more this year than most past years. In March I sudenly
+        had to give up climbing and thus any semblance of a social life. In June
+        I moved out of MA, following my partner Emma to her residency at Johns
+        Hopkins. We landed on our feet: I was fortunate enough to keep my job,
+        we secured a spacious apartment, and we adopted two cats,
+        <abbr
+          title="current nicknames include 'Gremlin', 'Gargoyle', 'Chicken', 'Panther', and 'Hey! Get off the counter!'."
+        >
+          Bean</abbr
+        >
+        and
+        <abbr
+          title="past nicknames include 'lil lump'; current nicknames include 'big lump', 'tiger', 'Turkey', and 'love bug'."
+        >
+          Peanut</abbr
+        >.
+      </p>
+      <div class="container">
+        <img
+          src="./cat_tower_1.jpg"
+          title="Peanut (left) and Bean (right) on the cat tower we were recently gifted."
+        />
+        <img src="./festive.jpg" title="obligatory." />
+        <img
+          src="./garden_visit.jpg"
+          title="Taken on a recent Baltimore-exploring expedition"
+        />
+        <img
+          src="./typical_family_photo.jpg"
+          title="this is pretty typical: us sitting around taking photos of the cats"
+        />
+      </div>
+      <p>
+        Despite shifts in my lifestyle, quarantine made my days seem nearly
+        uneventful. I'm including an electronic recipe book as a representative
+        sample of some of my consistent passtimes: cooking and coding.
+      </p>
+      <p>
+        I strongly dislike backstories in recipe blogs, but if you'd like, you
+        can read why I included these recepes alonside the links below.
+      </p>
+      <p>
+        <details>
+          <summary>
+            <a
+              href="https://recipes.skalt.vercel.app/recipe/home_fries"
+              target="_blank"
+              >[link]</a
+            >
+            Home fries
+          </summary>
+          <p>
+            I got good at making these early in the pandemic. Eating a
+            greasy-spoon breakfast for dinner makes staying at home more
+            enjoyable.
+          </p>
+        </details>
+        <details>
+          <summary>
+            <a
+              href="https://recipes.skalt.vercel.app/recipe/pesto"
+              target="_blank"
+              >[link]</a
+            >
+            Pesto
+          </summary>
+          <p>
+            Emma and I started out with grand dreams of an apartment filled with
+            houseplants. Bored cats and inexperienced gardeners largely squashed
+            that idea. Our greatest success yet has been our basil bush, which
+            takes up nearly all of the window over our sink.
+          </p>
+        </details>
+        <details>
+          <summary>
+            <a
+              href="https://recipes.skalt.vercel.app/recipe/yogurt_bread"
+              target="_blank"
+              >[link]</a
+            >
+            Yogurt bread
+          </summary>
+          <p>
+            This is Grandma Kalt's yogurt bread. My Dad passed down the
+            tradition of baking it. I don't know who, but someone passed down
+            another tradition: being lazy and automating everything possible.
+            This recipe can take as little as 10 minutes of prep time with flour
+            premeasured into a jar, dry yeast, and a bread machine.
+          </p>
+          <p>
+            I tried making sourdough in the first few months of the pandemic. I
+            gave up any hope of making artisanal bread after cleaning out a few
+            jars of failed starter.
+          </p>
+        </details>
+
+        <details>
+          <summary title="ez pz">
+            <a
+              href="https://recipes.skalt.vercel.app/recipe/split_pea_soup"
+              target="_blank"
+              >[link]</a
+            >
+            Split pea soup
+          </summary>
+          <p>
+            Goes great with the aforementioned bread. This is another recipe
+            that I pre-measure into a jar for rapid assembly.
+            <!-- I don't know if this recipe is ready to rival Cambell's split pea soup -- it doesn't have quite the same taste of tin -- but after a day in the refrigerator retains the shape of t  -->
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            <a
+              href="https://recipes.skalt.vercel.app/recipe/mixed_bean_soup"
+              target="_blank"
+              >[link]</a
+            >
+            Mixed bean soup
+          </summary>
+          <p>
+            This is the first soup where I thought I could taste the difference
+            of adding a bay leaf. I may have been wrong, but I've made the
+            recipe enough for it to merit a place here.
+          </p>
+        </details>
+      </p>
+    </div>
+  </main>
+  <script>
+    const hash = window.location.hash.slice(1);
+    const el = document.getElementById("msg");
+    const words = [
+      ...new Set(
+        document.querySelector("div.card")?.textContent.split(/[ \n.!,;:]+/)
+      ),
+    ]
+      .filter((f) => f.length > 3)
+      .sort();
+    let dictionary = words.reduce(
+      (dict, word, index) => ({ ...dict, [word]: index }),
+      {}
+    );
+    const read = (hash) =>
+      hash
+        .split("+")
+        .map((m) =>
+          /:\d+/.test(m) ? words[parseInt(m.slice(1))] : m === "__" ? "\n" : m
+        )
+        .join(" ");
+    const encode = (text) =>
+      text
+        .split(/ +/g)
+        .map((w) =>
+          w in dictionary ? `:${dictionary[w]}` : w == "\n" ? "__" : w
+        )
+        .join("+");
+
+    el.addEventListener("keyup", () => {
+      console.log("_");
+      const path = `${location.origin}${location.pathname}#${encode(
+        el.innerText
+      )}`;
+      history.replaceState({ path }, "", path);
+    });
+    hash ? (el.innerText = read(hash)) : write(el);
+  </script>
+</body>
