@@ -12,7 +12,7 @@
     "build": "parcel build --public-url '/2018' ./src/index.html -d 2018 --detailed-report",
     "start": "parcel ./src/index.html",
     "test": "cat ./2018/index.html | grep -q '\"snow_1'",
-    "deploy": "git submodule update --recursive --remote && yarn build && yarn test && now"
+    "deploy": "git submodule update --init --recursive --remote -- 2019 && yarn build && yarn test && vercel"
   },
   "devDependencies": {
     "@vue/cli-plugin-pwa": "^3.3.0",
