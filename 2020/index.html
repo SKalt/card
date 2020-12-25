@@ -73,15 +73,22 @@
       </p>
       <div class="container">
         <img
+          alt="Peanut and Bean on our cat tower."
           src="./cat_tower_1.jpg"
           title="Peanut (left) and Bean (right) on the cat tower we were recently gifted."
         />
-        <img src="./festive.jpg" title="obligatory." />
         <img
+          alt="Obligatory xmas picture."
+          src="./festive.jpg"
+          title="obligatory."
+        />
+        <img
+          alt="Emma and me visiting Baltimore's Rawling conservatory."
           src="./garden_visit.jpg"
           title="Taken on a recent Baltimore-exploring expedition"
         />
         <img
+          alt="Emma and me taking pictures of the cats sleeping."
           src="./typical_family_photo.jpg"
           title="this is pretty typical: us sitting around taking photos of the cats"
         />
@@ -220,6 +227,6 @@
       )}`;
       history.replaceState({ path }, "", path);
     });
-    hash ? (el.innerText = read(hash)) : write(el);
+    if (hash) el.innerText = read(hash);
   </script>
 </body>
