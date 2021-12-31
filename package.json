@@ -2,28 +2,27 @@
   "name": "happy-holidays.now.sh",
   "version": "0.0.1",
   "description": "a holiday card",
-  "main": "src/index.html",
   "repository": "https://github.com/SKalt/card.git",
   "author": "Steven Kalt <kalt.steven@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
     "prebuild": "rm -rf ./2018/*",
-    "build": "parcel build --public-url '/2018' ./src/index.html -d 2018 --detailed-report",
+    "build": "parcel build --public-url '/2018' --dist-dir 2018 --detailed-report -- ./src/index.html ",
     "start": "parcel ./src/index.html",
     "test": "cat ./2018/index.html | grep -q '\"snow_1'",
-    "deploy": "git submodule update --init --recursive --remote -- 2019 && yarn build && yarn test && vercel"
+    "deploy": "git submodule update --init --recursive --remote -- 2019 2021 && yarn build && yarn test && vercel"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.1",
     "@vue/cli-plugin-pwa": "^3.3.0",
     "global": "^4.3.2",
-    "parcel": "^1.11.0",
+    "parcel": "2",
     "sass": "^1.15.2",
-    "serve": "^11.2.0",
-    "webpack-cli": "^3.1.2"
+    "serve": "^11.2.0"
   },
   "dependencies": {
     "lz-string": "^1.4.4",
-    "vercel": "^21.0.1"
+    "vercel": "^23"
   }
 }
