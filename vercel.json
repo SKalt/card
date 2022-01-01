@@ -1,0 +1,4 @@
+{
+  "trailingSlash": true,
+  "routes": [{ "source": "/", "destination": "/2018/", "permanent": true }]
+}

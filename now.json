@@ -1,5 +1,0 @@
-{
-  "alias": "happy-holidays.now.sh",
-  "files": ["./2018", "./2019"],
-  "routes": [{ "src": "/", "status": 308, "headers": { "Location": "/2018/" } }]
-}
