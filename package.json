@@ -14,15 +14,15 @@
     "deploy": "git submodule update --init --recursive --remote -- 2019 2021 && yarn build && yarn test && vercel"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.1",
-    "@vue/cli-plugin-pwa": "^3.3.0",
-    "global": "^4.3.2",
-    "parcel": "2",
-    "sass": "^1.15.2",
-    "serve": "^11.2.0"
+    "@parcel/transformer-sass": "^2.10.3",
+    "@vue/cli-plugin-pwa": "^3.12.1",
+    "global": "^4.4.0",
+    "parcel": "^2.10.3",
+    "sass": "^1.69.5",
+    "serve": "^11.3.2",
+    "vercel": "^32"
   },
   "dependencies": {
-    "lz-string": "^1.4.4",
-    "vercel": "^23"
+    "lz-string": "^1.5.0"
   }
 }
