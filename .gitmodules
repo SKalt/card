@@ -14,3 +14,7 @@
 	path = 2023
 	url = https://github.com/SKalt/card-2023.git
 	branch = dist
+[submodule "2024"]
+	path = 2024
+	url = https://github.com/SKalt/card-2024.git
+	branch = dist
